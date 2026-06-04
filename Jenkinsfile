@@ -2,6 +2,16 @@ pipeline {
     agent any
 
     stages {
+        stage('Debug') {
+            steps {
+                sh '''
+                    whoami
+                    hostname
+                    which docker || true
+                    docker --version || true
+                '''
+            }
+        }
         stage('Build') {
             agent {
                 docker {
