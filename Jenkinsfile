@@ -13,10 +13,10 @@ pipeline {
             }
         } */
 
-        environment {
-            NETLIFY_SITE_ID = 'd03556c3-1d07-4da5-bede-9885fe75235e'
-            NETLIFY_AUTH_TOKEN = credentials('netlify-token')
-        }    
+    environment {
+        NETLIFY_SITE_ID = 'd03556c3-1d07-4da5-bede-9885fe75235e'
+        NETLIFY_AUTH_TOKEN = credentials('netlify-token')
+    }    
 
         stage('Build') {
             agent {
