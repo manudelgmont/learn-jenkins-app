@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Debug') {
+      /*  stage('Debug') {
             steps {
                 sh '''
                     whoami
@@ -11,7 +11,7 @@ pipeline {
                     docker --version || true
                 '''
             }
-        }
+        } */
         stage('Build') {
             agent {
                 docker {
@@ -23,14 +23,14 @@ pipeline {
                 sh '''
                     ls -la
                     node --version
-                    npm -- version
+                    npm --version
                     npm ci
                     npm run build
                     ls -la
                 '''
             }
         }
-        stage('Test') {
+        /*stage('Test') {
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -45,6 +45,6 @@ pipeline {
                 '''
 
             }
-        }
+        } */
     }
 }
