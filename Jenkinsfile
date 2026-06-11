@@ -5,14 +5,14 @@ pipeline {
         NETLIFY_SITE_ID = 'd03556c3-1d07-4da5-bede-9885fe75235e'
         NETLIFY_AUTH_TOKEN = credentials('netlify-token')
     }
-       
+
     stages {
       /*  stage('Debug') {
             steps {
                 sh '''
                     whoami
                     hostname
-                    which docker || true
+                    0which docker || true
                     docker --version || true
                 '''
             }
@@ -96,6 +96,7 @@ pipeline {
                     node_modules/.bin/netlify --version
                     echo "Deploying to production. Site ID: $NETLIFY_SITE_ID"
                     node_modules/.bin/netlify status
+                    node_modules/.bin/netlify --dir=build --prod
                 '''
             }
         }
