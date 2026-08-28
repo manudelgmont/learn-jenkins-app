@@ -98,7 +98,7 @@ pipeline {
                     reuseNode true
                 }
             }
-            
+
             environment {
                 CI_ENVIRONMENT_URL = 'https://nimble-pika-bdf8eb.netlify.app'
             }
@@ -110,7 +110,6 @@ pipeline {
             }
             post {
                always {
-                   junit 'jest-results/junit.xml'
                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Playwright E2E', reportTitles: '', useWrapperFileDirectly: true])
                    
                 }
