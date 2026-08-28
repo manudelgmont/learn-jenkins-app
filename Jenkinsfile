@@ -98,10 +98,11 @@ pipeline {
                     reuseNode true
                 }
             }
+            
+            environment {
+                CI_ENVIRONMENT_URL = 'https://nimble-pika-bdf8eb.netlify.app'
+            }
 
-        environment {
-            CI_ENVIRONMENT_URL = 'https://nimble-pika-bdf8eb.netlify.app'
-        }
             steps {
                 sh '''
                   npx playwright test --reporter=html
